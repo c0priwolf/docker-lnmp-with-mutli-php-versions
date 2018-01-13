@@ -1,19 +1,32 @@
-# Build and Release Folders
-bin/
-bin-debug/
-bin-release/
-[Oo]bj/ # FlashDevelop obj
-[Bb]in/ # FlashDevelop bin
+# for Mac OS X System Files
+.DS_Store
+.DS\_Store
+Thumbs.db
+ 
+# for emacs
+*~
+[#]*[#]
 
-# Other files and folders
-.settings/
+# for vim
+*.swp
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# for Eclipse
+*.project
+ 
+# for Logs and databases
+*.log
+ 
+# remove SVN
+.svn
+ 
+# for Xcode
+.*.swp
+.clang_complete
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+ 
+# for IDEA
+*/build/*
+.idea/*
+*.iml
+/out/*
