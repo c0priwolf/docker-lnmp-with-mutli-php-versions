@@ -1,17 +1,9 @@
-mysql:
-      image: mysql:latest
-      ports:
-          - "3306:3306"
-      volumes:
-          - ./conf/mysql/my.cnf:/etc/mysql/my.cnf:ro
-          - ./mysql/:/var/lib/mysql/:rw
-          - ./log/mysql/:/var/log/mysql/:rw
-      environment:
-          MYSQL_ROOT_PASSWORD: "1234567"
 nginx:
     image: nginx:alpine
     ports:
       - "80:80"
+    # Ensure the read and write access
+    privileged: true
     volumes:
       - ./site/:/var/www/html/:rw
       - ./conf/nginx/conf.d:/etc/nginx/conf.d/:ro
@@ -26,6 +18,7 @@ php53:
       build: ./php/php53/
       expose:
           - "9000"
+      privileged: true
       volumes:
           - ./site/:/var/www/html:rw
           - ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
@@ -39,6 +32,7 @@ php56:
       build: ./php/php56/
       expose:
           - "9000"
+      privileged: true
       volumes:
           - ./site/:/var/www/html/:rw
           - ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
@@ -51,6 +45,7 @@ php72:
       build: ./php/php72/
       expose:
           - "9000"
+      privileged: true
       volumes:
           - ./site/:/var/www/html/:rw
           - ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
@@ -59,4 +54,15 @@ php72:
       links:
           - mysql:mysql
 
+mysql:
+      image: mysql:latest
+      ports:
+          - "3306:3306"
+      privileged: true
+      volumes:
+          - ./conf/mysql/my.cnf:/etc/mysql/my.cnf:ro
+          - ./mysql/:/var/lib/mysql/:rw
+          - ./log/mysql/:/var/log/mysql/:rw
+      environment:
+          MYSQL_ROOT_PASSWORD: "1234567"
 
