@@ -81,20 +81,21 @@ Here is a example for creating a php53 site:
 > If you want to create a `php56`/`php72` site? Refer to `site2.conf`/`site1.conf`
 
 ```bash
-cp ./conf/nginx/conf.d/site3.conf ./conf/nginx/conf.d/youDomainName.conf
+$ cp ./conf/nginx/conf.d/site3.conf ./conf/nginx/conf.d/youDomainName.conf
 ```
 
-2. Create the Site Web Root Directory
+2. Edit the field `server_name`(Your WebSite Domain) & `root`(Your WebSite Root Directory) in conf file:
+![](./docker-compose-lnmp-multi-php-version-2.png)
 
+3. Create the Site Web Root Directory
 ```bash
-mkdir ./site/youDomainName
+$ mkdir ./site/youDomainName
 ```
 
-3. Put the web files into the Directory
-4. Restart the docker
-
+4. Put the web files into the Directory
+5. Restart the docker
 ```bash
-docker-compose restart
+$ docker-compose restart
 ```
 
 ## Acknowledgement
