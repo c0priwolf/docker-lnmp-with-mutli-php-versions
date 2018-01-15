@@ -58,7 +58,7 @@ $ docker-compose up
 
 > the php7.2 site files is in `./site/site1`
 
-![](./src/SCREENSHOT.png)
+![](./src/docker-compose-lnmp-multi-php-version-screenshot.png)
 
 ## Preview other php version website?
 1. You can add these `hosts` in your system.
