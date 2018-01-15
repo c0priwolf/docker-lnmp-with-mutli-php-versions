@@ -87,7 +87,7 @@ $ cp ./conf/nginx/conf.d/site3.conf ./conf/nginx/conf.d/youDomainName.conf
 ```
 
 2. Edit the field `server_name`(Your WebSite Domain) & `root`(Your WebSite Root Directory) in conf file:
-![](./docker-compose-lnmp-multi-php-version-2.png)
+![](./src/docker-compose-lnmp-multi-php-version-2.png)
 
 3. Create the Site Web Root Directory
 ```bash
